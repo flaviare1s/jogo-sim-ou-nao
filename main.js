@@ -12,20 +12,8 @@ function moverBotao() {
 }
 
 btNao.addEventListener('mousemove', moverBotao)
+btNao.addEventListener('touchmove', moverBotao)
 
-document.addEventListener("touchmove", (e) => {
-  const touch = e.touches[0]
-  const rect = btNao.getBoundingClientRect()
-
-  if (
-    touch.clientX >= rect.left &&
-    touch.clientX <= rect.right &&
-    touch.clientY >= rect.top &&
-    touch.clientY <= rect.bottom
-  ) {
-    moverBotao()
-  }
-})
 
 btSim.addEventListener('click', () => {
   resultado.classList.add('active')
