@@ -12,7 +12,10 @@ function moverBotao() {
 }
 
 btNao.addEventListener('mousemove', moverBotao)
-btNao.addEventListener('touchmove', moverBotao)
+
+if (window.innerWidth < 500) {
+  setInterval(moverBotao, 500);
+}
 
 
 btSim.addEventListener('click', () => {
